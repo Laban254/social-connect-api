@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment directories
+.venv/
+env/
+
+# Environment variable files
+.env
+
+# Flask instance folder
+instance/
+
+# Pytest cache
+.pytest_cache/
+
+# Database files (if any)
+*.db
+*.sqlite3
+
+# Docker-related files
+*.log
+docker-compose.yml
+
+# IDE specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
