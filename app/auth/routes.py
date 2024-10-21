@@ -1,6 +1,8 @@
 from flask import Blueprint, redirect, url_for, session, jsonify
 from authlib.integrations.flask_client import OAuth
 from .oauth import oauth
+from app.users.models import User
+from app.extensions import db
 
 auth_bp = Blueprint('auth', __name__)
 
@@ -17,10 +19,28 @@ def login():
 def auth_callback():  
     try:
         token = oauth.google.authorize_access_token()  
-        resp = oauth.google.get('userinfo')  
+        resp = oauth.google.get('userinfo')
         user_info = resp.json()
+
+        user = User.query.filter_by(email=user_info['email']).first()
+        
+        if not user:
+            new_user = User(
+                email=user_info['email'],
+                name=user_info['name'],
+                profile_pic=user_info.get('picture')
+            )
+            db.session.add(new_user)
+            db.session.commit()  
+
         session['user'] = user_info  
-        return redirect(url_for('auth.profile')) 
+        session['token'] = token  
+
+        return jsonify({
+            "access_token": token.get('access_token'),  
+            "user_info": user_info
+        })
+
     except Exception as e:
         return f"Error during authentication: {e}", 400
 

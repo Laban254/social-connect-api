@@ -2,6 +2,7 @@
 
 from authlib.integrations.flask_client import OAuth
 from app.config import Config
+
 oauth = OAuth()
 config  = Config()
 
