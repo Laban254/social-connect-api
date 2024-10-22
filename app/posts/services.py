@@ -1,5 +1,5 @@
 from app.posts.models import Post, Hashtag, PostHashtag
-from app import db
+from app.extensions import db
 
 def create_post_service(user_id, content, media_url=None, hashtags=[]):
     """Create a new post."""

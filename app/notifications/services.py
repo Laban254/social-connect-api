@@ -1,4 +1,4 @@
-from app import db
+from app.extensions import db
 from app.notifications.models import Notification
 
 def get_notifications(user_id):

@@ -1,4 +1,4 @@
-from app import db
+from app.extensions import db
 from app.interactions.models import Like, Comment
 # from app.notifications.services import trigger_notification  # Assuming a notification service exists
 
