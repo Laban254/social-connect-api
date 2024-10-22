@@ -31,8 +31,10 @@ def auth_callback():
                 profile_pic=user_info.get('picture')
             )
             db.session.add(new_user)
-            db.session.commit()  
-
+            db.session.commit()
+            user = new_user 
+            
+        session['user_id'] = user.id
         session['user'] = user_info  
         session['token'] = token  
 
