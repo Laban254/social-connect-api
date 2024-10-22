@@ -10,6 +10,9 @@ class User(db.Model):
     profile_pic = db.Column(db.String(200)) 
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     is_private = db.Column(db.Boolean, default=False)  
+    likes = db.relationship('Like', back_populates='user', cascade="all, delete-orphan")
+    comments = db.relationship('Comment', back_populates='user', cascade="all, delete-orphan")
+
 
     followers = db.relationship(
         'User', 

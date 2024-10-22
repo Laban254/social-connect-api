@@ -12,6 +12,8 @@ class Post(db.Model):
     media_url = db.Column(db.String(255), nullable=True) 
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     hashtags = db.relationship('Hashtag', secondary='post_hashtag', back_populates='posts')
+    likes = db.relationship('Like', back_populates='post', cascade="all, delete-orphan")
+    comments = db.relationship('Comment', back_populates='post', cascade="all, delete-orphan")
     
     def __repr__(self):
         return f'<Post {self.id}>'
