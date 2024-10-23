@@ -28,6 +28,7 @@ Flask-SQLAlchemy==3.1.1
 frozenlist==1.4.1
 g4f==0.3.3.1
 greenlet==3.1.1
+gunicorn==23.0.0
 h11==0.14.0
 idna==3.10
 itsdangerous==2.2.0
