@@ -1,6 +1,6 @@
 from app.extensions import db
 from app.interactions.models import Like, Comment
-# from app.notifications.services import trigger_notification  # Assuming a notification service exists
+from app.notifications.services import trigger_notification 
 
 def like_post(user_id, post_id):
     """Add a like to a post by the given user."""
@@ -13,8 +13,7 @@ def like_post(user_id, post_id):
         db.session.add(new_like)
         db.session.commit()
         
-        # Optionally trigger a notification for the post's author
-        # trigger_notification(post_id, f'User {user_id} liked your post.')
+        trigger_notification(post_id, f'User {user_id} liked your post.')
         
         return True
     except Exception as e:
@@ -28,8 +27,7 @@ def comment_on_post(user_id, post_id, content):
         db.session.add(new_comment)
         db.session.commit()
         
-        # Optionally trigger a notification for the post's author
-        # trigger_notification(post_id, f'User {user_id} commented on your post: "{content}"')
+        trigger_notification(post_id, f'User {user_id} commented on your post: "{content}"')
 
         return new_comment
     except Exception as e:

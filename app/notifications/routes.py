@@ -18,7 +18,7 @@ def get_user_notifications():
         'timestamp': notification.timestamp
     } for notification in notifications]), 200
 
-@notifications_bp.route('/notifications/<int:notification_id>/read', methods=['POST'])
+@notifications_bp.route('/notifications/<int:notification_id>/read', methods=['PUT'])
 def mark_notification_as_read(notification_id):
     current_user_id = get_current_user_id()
     if not current_user_id:
