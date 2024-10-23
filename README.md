@@ -11,8 +11,9 @@ This project is a **social media backend** built using Flask, Flask-SocketIO, OA
 3.  [API Endpoints](#api-endpoints)
 4.  [Running with Docker](#running-with-docker)
 5.  [Development](#development)
-6.  [License](#license)
-7.  [Contact](#contact)
+6.   [Todo](#Todo)
+7.  [License](#license)
+8.  [Contact](#contact)
 
 ----------
 
@@ -143,6 +144,19 @@ For development, you can also run the application without Docker:
    ```
 
 ----------
+
+### 📝TODO List
+
+1.  **🧪 Testing**
+    
+    -   Write tests for:
+        -  [ ]  Authentication
+        -   [ ]  User management
+        -  [ ]   Post creation
+        -   [ ]  Notifications
+2.  **🔄 CI/CD Integration**
+    
+    - [ ]   Implement CI/CD for automated testing and deployment.
 
 ## 📜 License
 
