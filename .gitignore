@@ -23,7 +23,6 @@ instance/
 
 # Docker-related files
 *.log
-docker-compose.yml
 
 # IDE specific files
 .vscode/
