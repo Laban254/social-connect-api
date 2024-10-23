@@ -15,7 +15,7 @@ def like_a_post(post_id):
     if like_post(current_user_id, post_id):
         return jsonify({'message': f'You liked post {post_id}'}), 201
     else:
-        return jsonify({'error': 'Already liked this post'}), 400
+        return jsonify({'error': 'Already liked this post'}), 409
 
 @interactions_bp.route('/posts/<int:post_id>/comment', methods=['POST'])
 def comment_on_a_post(post_id):
