@@ -1,6 +1,9 @@
 # 🌐 Social Connect API
 
-This project is a **social media backend** built using Flask, Flask-SocketIO, OAuth for authentication, and JWT for session management. It provides features for user authentication, profile management, content creation, interactions, and real-time notifications. The application is containerized using Docker for easy development and production deployments and uses **PostgreSQL** as the database.
+
+This project is a **social media backend** built using Flask and Flask-SocketIO. It utilizes **Google OAuth** for authentication, enabling users to log in using their Google accounts. The application features user authentication, profile management, content creation, interactions (such as likes and comments), and real-time notifications. It is containerized using Docker for seamless development and production deployments, and it uses **PostgreSQL** as the database for data storage.
+
+
 
 ----------
 
@@ -19,8 +22,7 @@ This project is a **social media backend** built using Flask, Flask-SocketIO, OA
 
 ## 🚀 Features
 
--   **OAuth 2.0 Authentication**: Users can authenticate via third-party services such as Google, Facebook, and Twitter.
--   **JWT-based Local Authentication**: For session management with enhanced security.
+-   **OAuth 2.0 Authentication**: Users can authenticate via Google accounts.
 -   **Profile Management**: Create, update, and delete profiles, with privacy settings (public or private).
 -   **Post Creation**: Users can post text, images, or videos, and mention users or use hashtags.
 -   **Interactions**: Like, comment on posts, and trigger notifications for user interactions.
@@ -51,7 +53,9 @@ GOOGLE_REDIRECT_URI=your-redirect-url
 # OAuth credentials
 ```
 GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret` 
+GOOGLE_CLIENT_SECRET=your_google_client_secret`
+GOOGLE_CLIENT_REDIRECT=redirect-url
+
 ```
 Make sure you have PostgreSQL set up and the database created before running the application.
 
@@ -90,11 +94,11 @@ Guide to use **Postman** for testing WebSocket connections, including connecting
 
 ### **User Authentication**
 
--   `POST /auth/login`: Login with local credentials (JWT authentication).
--   `GET /auth/google`: Login with Google OAuth.
--   `GET /auth/facebook`: Login with Facebook OAuth.
--   `GET /auth/twitter`: Login with Twitter OAuth.
-
+-   `GET /`: Redirect to login page.
+-   `GET /login`: Login with Google OAuth.
+-   `GET /auth/callback`: Callback route for handling Google authentication.
+-   `GET /profile`: Retrieve user profile information.
+-   `GET /logout`: Logout and clear session.
 ### **Profile Management**
 
 -   `GET /profiles/<user_id>`: Retrieve profile details.
