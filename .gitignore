@@ -1,31 +1,103 @@
-# Byte-compiled / optimized / DLL files
+# Python
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Virtual environment directories
-.venv/
+# Virtual Environment
+venv/
 env/
-
-# Environment variable files
+ENV/
 .env
+.venv
+env.bak/
+venv.bak/
 
-# Flask instance folder
-instance/
-
-# Pytest cache
-.pytest_cache/
-
-# Database files (if any)
-*.db
-*.sqlite3
-
-# Docker-related files
-*.log
-
-# IDE specific files
-.vscode/
+# IDE
 .idea/
-*.sublime-workspace
-*.sublime-project
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Flask
+instance/
+.webassets-cache
+*.log
+logs/
+*.sqlite
+*.db
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+
+# Distribution
+*.tar.gz
+*.zip
+*.rar
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Database
+*.sqlite3
+*.db
+migrations/
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+.pytest_cache/
+.mypy_cache/
+__pycache__/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Local development
+*.local
+*.bak
+*.tmp
+*.temp
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Redis
+dump.rdb
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Coverage
+.coverage
+.coverage.*
+coverage.xml
+*.cover
